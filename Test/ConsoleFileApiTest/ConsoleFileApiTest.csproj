@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="client_setup.json" />
+    <None Remove="test.docx" />
+    <None Remove="test.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="client_setup.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PandaDocDotNetCoreSDK.csproj" />
+  </ItemGroup>
+
+</Project>

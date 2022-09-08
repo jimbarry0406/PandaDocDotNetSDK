@@ -1,0 +1,60 @@
+# PandaDocDotNetCoreSDK
+**Private** Library --- not affiliated with PandaDoc in any way
+
+**Website:** https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki
+
+**License:** https://licenses.nuget.org/MIT
+
+**References:**
+
+API Documentation: https://developers.pandadoc.com/reference/about
+
+API Reference: https://openapi.pandadoc.com/#/
+
+
+## Notes:
+	Derived from Richard Downer's original PandaDoc.NET project, last updated 2015 (seven years ago, as of 2022)
+		https://github.com/richarddowner/PandaDoc
+
+
+	Updated to match current Model and API, using references from above
+	
+	Updated to .NET Core Library
+	
+
+This Github repository contains the base Library code and some test console applications to demonstrate various API calls.
+
+The library package is also available through **Nuget:** https://www.nuget.org/packages/PandaDocDotNetCoreSDK/
+
+***
+**Dependent Packages**...
+***
+
+# Flurl
+Website: https://flurl.dev/
+
+License: https://licenses.nuget.org/MIT
+
+# HTMLAgilityPack
+Website: https://html-agility-pack.net
+
+License: https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
+
+
+# Microsoft.AspNet.WebApi.Client
+Website: https://dotnet.microsoft.com/en-us/apps/aspnet/apis
+
+License: https://www.nuget.org/packages/Microsoft.AspNet.WebApi/5.2.9/license
+
+
+# Microsoft.AspNetCore.StaticFiles
+Website: https://dotnet.microsoft.com/en-us/apps/aspnet
+
+License: https://licenses.nuget.org/MIT
+
+
+# NewtonSoft.Json
+Website: https://www.newtonsoft.com/json
+
+License: https://licenses.nuget.org/MIT
+

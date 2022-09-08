@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>	  
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <icon>openapilogo.png</icon>
+    <projectUrl>https://github.com/jimbarry0406/PandaDocDotNetCoreSDK/wiki</projectUrl>
+    <description>https://github.com/jimbarry0406/PandaDocDotNetCoreSDK/wiki</description>
+    <!-- <releaseNotes></releaseNotes> -->
+    <copyright>$copyright$</copyright>
+    <tags>PandaDoc API .NET Core 6.0</tags>
+	  <dependencies>
+		  <group targetFramework="net60" />
+	  </dependencies>
+    <readme>README.md</readme>	  
+  </metadata>
+  <files>
+    <file src="openapilogo.png" target="" />
+    <file src="LICENSE.txt" target="" />
+    <file src="README.txt" target="" />
+	<file src="README.md" target="" />
+	<file src="NOTICE.txt" target="" />
+  </files>
+</package>

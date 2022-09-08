@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8BA25259-8D68-43B8-840D-9F951D5E5332}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PandaDocDotNetFrameworkSDK</RootNamespace>
+    <AssemblyName>PandaDocDotNetFrameworkSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\framework\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\framework\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>IDE0059; CA1001; S1854; CA2202; CA1401; CA2100; IDE0051; IDE0059; IDE1006; S1066; S1199; S125; S2589; S2583</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiUtils.cs" />
+    <Compile Include="API\Documents\GetDetails\DocumentDetailsApi.cs" />
+    <Compile Include="API\Documents\GetStatus\DocumentStatusApi.cs" />
+    <Compile Include="API\Documents\PostCreate\DocumentCreateApi.cs" />
+    <Compile Include="API\Documents\PostSend\DocumentSendApi.cs" />
+    <Compile Include="API\Templates\GetDetails\TemplateDetailsApi.cs" />
+    <Compile Include="API\Templates\GetList\TemplateListApi.cs" />
+    <Compile Include="FrameworkApiUtils.cs" />
+    <Compile Include="InternalApiUtils.cs" />
+    <Compile Include="JsonUtils.cs" />
+    <Compile Include="Models\AssignedTo.cs" />
+    <Compile Include="Models\Column.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContentPlaceholder.cs" />
+    <Compile Include="Models\CustomColumns.cs" />
+    <Compile Include="Models\CustomFields.cs" />
+    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\Documents\GetDetails\DocumentDetailsResponse.cs" />
+    <Compile Include="Models\Documents\PostCreate\DocumentCreateUrlQueryParams.cs" />
+    <Compile Include="Models\Fee.cs" />
+    <Compile Include="Models\GrandTotal.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\LinkedObject.cs" />
+    <Compile Include="Models\Options.cs" />
+    <Compile Include="Models\PandaDocRequest.cs" />
+    <Compile Include="Models\PandaDocResponse.cs" />
+    <Compile Include="Models\Pricing.cs" />
+    <Compile Include="Models\SentBy.cs" />
+    <Compile Include="Models\CreatedBy.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\JsonCollection.cs" />
+    <Compile Include="Models\Documents\PostCreate\DocumentCreateRequest.cs" />
+    <Compile Include="Models\Documents\PostCreate\DocumentCreateResponse.cs" />
+    <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\Documents\GetStatus\DocumentStatusResponse.cs" />
+    <Compile Include="Models\Link.cs" />
+    <Compile Include="Models\Metadata.cs" />
+    <Compile Include="Models\OwnerProxy.cs" />
+    <Compile Include="Models\Recipient.cs" />
+    <Compile Include="Models\Documents\PostSend\DocumentSendRequest.cs" />
+    <Compile Include="Models\Documents\PostSend\DocumentSendResponse.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Summary.cs" />
+    <Compile Include="Models\Table.cs" />
+    <Compile Include="Models\Tax.cs" />
+    <Compile Include="Models\Template.cs" />
+    <Compile Include="Models\Templates\GetDetails\TemplateDetailsResponse.cs" />
+    <Compile Include="Models\Templates\GetList\TemplateListResponse.cs" />
+    <Compile Include="Models\Templates\GetList\TemplateListUrlQueryParams.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="PandaDocApi.cs" />
+    <Compile Include="PandaDocHttpClientSettings.cs" />
+    <Compile Include="PandaDocHttpClient.cs" />
+    <Compile Include="PandaDocHttpResponse.cs" />
+    <Compile Include="PandaDocHttpResponseExtensions.cs" />
+    <Compile Include="PandaDocUrlQueryParams.cs" />
+    <Compile Include="PandaDocUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt" Pack="true" PackagePath="\" >
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LICENSE.txt" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NOTICE.txt" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="openapilogo.png" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="PandaDocDotNetFrameworkSDK.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl" Pack="true">
+      <Version>3.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack" Pack="true">
+      <Version>1.11.43</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi" Pack="true">
+      <Version>5.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Pack="true">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http" Pack="true">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http.Formatting.Extension" Pack="true">
+      <Version>5.2.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

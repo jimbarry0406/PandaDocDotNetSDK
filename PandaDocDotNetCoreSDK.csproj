@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>\bin\</BaseOutputPath>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageIcon>openapilogo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackAsTool>True</PackAsTool>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Title>PandaDoc SDK for .NET Core</Title>
+    <Authors>jimbarry0406</Authors>
+    <Description>PandaDoc SDK for .NET Core</Description>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki</PackageProjectUrl>
+    <PackageTags>PandaDoc .NET SDK</PackageTags>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ConsoleTemplateApiTest\**" />
+    <Compile Remove="Properties\**" />
+    <Compile Remove="Test\**" />
+    <EmbeddedResource Remove="ConsoleTemplateApiTest\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <EmbeddedResource Remove="Test\**" />
+    <None Remove="ConsoleTemplateApiTest\**" />
+    <None Remove="Properties\**" />
+    <None Remove="Test\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="FrameworkApiUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE.txt" />
+    <None Remove="README.txt" />
+    <None Remove="NOTICE.txt" />
+    <None Remove="openapilogo.png" />
+    <Content Include="README.md" Pack="true" PackagePath="\" />
+    <None Remove="PandaDocDotNetCoreSDK.nuspec" />
+    <None Remove="PandaDocDotNetFrameworkSDK.nuspec" />
+    <None Remove="publish.bat" />
+  </ItemGroup>
+
+	
+
+  <ItemGroup>
+    <Content Include="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NOTICE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="openapilogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.6" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="openapilogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <Content Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

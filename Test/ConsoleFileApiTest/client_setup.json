@@ -1,0 +1,9 @@
+{
+ "PandaDocApiKey":"0000000000000000000000000000000000000000",
+ "PandaDocNdaTemplateId":"aaaaaaaaaaaaaaaaaaaaaa",
+ "PandaDocQuoteTemplateId":"aaaaaaaaaaaaaaaaaaaaaa",
+ "PandaDocTestClientEmail":"test.client@gmail.com",
+ "PandaDocTestRoleName":"user",
+ "PandaDocTestSenderEmail":"test.sender@gmail.com",
+ "PandaDocTestSignerEmail":"test.signer@gmail.com"
+}
