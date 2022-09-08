@@ -2,7 +2,27 @@
 using Newtonsoft.Json;
 using PandaDocDotNetSDK;
 
-// See https://aka.ms/new-console-template for more information
+//
+// Client Console Program Setup
+// ====================================================
+//
+// Included in the package is a generic cilent_setup.json.  The project is setup to automatically copy this setup into your build folder --- *unless* the existing file has a more recent timestamp
+// 
+// {
+//   "PandaDocApiKey":"0000000000000000000000000000000000000000",
+//   "PandaDocNdaTemplateId":"aaaaaaaaaaaaaaaaaaaaaa",
+//   "PandaDocQuoteTemplateId":"aaaaaaaaaaaaaaaaaaaaaa",
+//   "PandaDocTestClientEmail":"test.client@gmail.com",
+//   "PandaDocTestRoleName":"user",
+//   "PandaDocTestSenderEmail":"test.sender@gmail.com",
+//   "PandaDocTestSignerEmail":"test.signer@gmail.com"
+// }
+//
+// you have to change these default values to run your test:
+//      PandaDocApiKey should come from your PandaDoc online App, under Settings | Developers Dashboard | Configuration | API Keys
+//      PandaDocNdaTemplateId should come from your PandaDoc online App, when viewing/editing the Template, the URL will expose the unique ID for you
+//      Update Roles and Email to fit your test-case
+//
 
 // Load Settings
 ClientUtils.LoadClientSetup();
