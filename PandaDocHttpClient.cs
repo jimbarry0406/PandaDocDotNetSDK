@@ -8,7 +8,7 @@ namespace PandaDocDotNetSDK
     public sealed class PandaDocHttpClient : IDisposable
     {
 
-        private static MediaTypeFormatterCollection _defaultJsonFormatters = new MediaTypeFormatterCollection(); // Create Default Formatters Collection that can be re-used
+        private readonly static MediaTypeFormatterCollection _defaultJsonFormatters = new MediaTypeFormatterCollection(); // Create Default Formatters Collection that can be re-used
 
         public PandaDocHttpClientSettings Settings { get; set; }
         public HttpClient HttpClient { get; set; }
@@ -51,13 +51,10 @@ namespace PandaDocDotNetSDK
 
         public PandaDocHttpClient(string strApiKey, string strApiBase = "", string strApiInstance = "")
         {
-            // Settings (from input)
-            Settings = new PandaDocHttpClientSettings(strApiKey, strApiBase, strApiInstance);
-
-            // Client
+            // Init Client
             HttpClient = new HttpClient();
 
-            // JsonFormatting
+            // Init Formatting
             JsonFormatter = new JsonMediaTypeFormatter();
             JsonFormatter.SerializerSettings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Ignore;
             JsonFormatter.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
@@ -66,8 +63,48 @@ namespace PandaDocDotNetSDK
                                                                                                                     //      adjusting the JsonMember.Serializer settings, or
                                                                                                                     //      by adding member-specific ShouldSerialize() methods
 
-            // Authorization
-            HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("API-Key", Settings.StrApiKey);
+            // Init Settings
+            Settings = new PandaDocHttpClientSettings(strApiKey, strApiBase, strApiInstance);
+
+            // Setup Client
+            Setup(strApiKey, strApiBase, strApiInstance);
+
+
+        } // PandaDocHttpClient
+
+        public void Setup(string strApiKey, string strApiBase = "", string strApiInstance = "")
+        {
+
+            // Calculate Defaults
+            string strDefaultApiKey = strApiKey;
+            string strDefaultApiBase = strApiBase;
+            string strDefaultApiInstance = strApiInstance;
+            if (Settings != null)
+            {
+                if (string.IsNullOrEmpty(strDefaultApiKey))
+                {
+                    strDefaultApiKey = Settings.StrApiKey!;
+                }
+                if (string.IsNullOrEmpty(strDefaultApiBase))
+                {
+                    strDefaultApiBase = Settings.StrApiBase!;
+                }
+                if (string.IsNullOrEmpty(strDefaultApiInstance))
+                {
+                    strDefaultApiInstance = Settings.StrApiInstance!;
+                }
+            }
+
+            // Assign *new* Settings
+            if (Settings != null)
+            {
+                Settings.StrApiKey = strDefaultApiKey!;
+                Settings.StrApiBase = strDefaultApiBase!;
+                Settings.StrApiInstance = strDefaultApiInstance!;
+            }
+
+            // Setup Authorization
+            HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("API-Key", strDefaultApiKey);
 
             // we need to build-out a bearer-token option
 

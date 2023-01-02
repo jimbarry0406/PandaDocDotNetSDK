@@ -58,7 +58,7 @@ namespace PandaDocDotNetSDK.API
             Url endpointUrl = new Url(Url.Combine(Client.Settings.StrApiDocuments, uuid));
 
             // GET
-            using (HttpResponseMessage httpResponse = await Client.HttpClient.GetAsync(endpointUrl))
+            using (HttpResponseMessage httpResponse = await Client.HttpClient.GetAsync(endpointUrl).ConfigureAwait(false))
             {
                 return await httpResponse.ToPandaDocResponseAsync<DocumentStatusResponse>(Client.JsonFormatters)!;
             }

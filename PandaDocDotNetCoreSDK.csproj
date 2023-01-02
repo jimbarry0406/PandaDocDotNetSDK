@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
-    <BaseOutputPath>\bin\</BaseOutputPath>
+    <BaseOutputPath>bin\</BaseOutputPath>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageIcon>openapilogo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,7 +20,7 @@
     <Description>PandaDoc SDK for .NET Core</Description>
     <RepositoryUrl></RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki/</PackageProjectUrl>
     <PackageTags>PandaDoc .NET SDK</PackageTags>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
@@ -28,10 +28,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702; IDE0052; IDE0059; IDE0063; IDE0074; IDE0090; S2589; CS0472; S125; S1066</NoWarn>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -79,23 +81,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Flurl" Version="3.0.6" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+    <PackageReference Include="Flurl" Version="3.0.7" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="openapilogo.png">
+    <Content Update="openapilogo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None>
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</Content>
     <Content Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="API\Contacts\GetDetails\" />
+    <Folder Include="API\Contacts\GetList\" />
+    <Folder Include="API\Documents\GetList\" />
+    <Folder Include="Models\Documents\GetList\" />
+    <Folder Include="Models\Contacts\" />
   </ItemGroup>
 
 </Project>

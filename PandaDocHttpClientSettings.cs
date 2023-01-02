@@ -30,7 +30,7 @@ namespace PandaDocDotNetSDK
         public string? StrApiKey
         {
             get { return _strApiKey; }
-            private set
+            set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
@@ -46,7 +46,7 @@ namespace PandaDocDotNetSDK
         public string? StrApiBase
         {
             get { return _strApiBase; }
-            private set
+            set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
@@ -59,7 +59,7 @@ namespace PandaDocDotNetSDK
             }
         }
 
-        private string? StrApiInstance
+        public string? StrApiInstance
         {
             get { return _strApiInstance; }
             set

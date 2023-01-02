@@ -194,7 +194,7 @@ namespace PandaDocDotNetSDK.API
                 }
 
                 // POST
-                using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, httpContent))
+                using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, httpContent).ConfigureAwait(false))
                 {
                     return await httpResponse.ToPandaDocResponseAsync<DocumentCreateResponse>(Client.JsonFormatters)!;
                 }
@@ -364,7 +364,7 @@ namespace PandaDocDotNetSDK.API
                                                                         }
 
                                                                         // POST
-                                                                        using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, multiPartContent))
+                                                                        using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, multiPartContent).ConfigureAwait(false))
                                                                         {
                                                                             if (httpResponse != null)
                                                                             {

@@ -111,7 +111,7 @@ namespace PandaDocDotNetSDK.API
                 Url endpointUrl = new Url(Url.Combine(Client.Settings.StrApiDocuments, uuid, "send"));
 
                 // POST
-                using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, httpContent))
+                using (HttpResponseMessage httpResponse = await Client.HttpClient.PostAsync(endpointUrl, httpContent).ConfigureAwait(false))
                 {
                     return await httpResponse.ToPandaDocResponseAsync<DocumentSendResponse>(Client.JsonFormatters)!;
                 }

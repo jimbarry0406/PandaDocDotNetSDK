@@ -8,8 +8,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <icon>openapilogo.png</icon>
-    <projectUrl>https://github.com/jimbarry0406/PandaDocDotNetCoreSDK/wiki</projectUrl>
-    <description>https://github.com/jimbarry0406/PandaDocDotNetCoreSDK/wiki</description>
+    <projectUrl>https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki/</projectUrl>
+    <description>https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki/</description>
     <!-- <releaseNotes></releaseNotes> -->
     <copyright>$copyright$</copyright>
     <tags>PandaDoc API .NET Core 6.0</tags>

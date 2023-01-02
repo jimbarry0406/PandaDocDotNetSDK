@@ -5,19 +5,19 @@ namespace PandaDocDotNetSDK.API
 {
 
     // documentation
-    //  https://developers.pandadoc.com/reference/list-templates
+    //  https://developers.pandadoc.com/reference/list-documents
 
     // reference
-    //  https://openapi.pandadoc.com/#/operations/listTemplates
+    //  https://openapi.pandadoc.com/#/operations/listDocuments
 
-    public class TemplateListApi : PandaDocApi
+    public class DocumentListApi : PandaDocApi
     {
 
-        public TemplateListUrlQueryParams UrlQueryParms { get; set; } = new TemplateListUrlQueryParams();
+        public DocumentListUrlQueryParams UrlQueryParms { get; set; } = new DocumentListUrlQueryParams();
 
-        public PandaDocHttpResponse<TemplateListResponse> HttpResponse { get; set; } = new PandaDocHttpResponse<TemplateListResponse>();
+        public PandaDocHttpResponse<DocumentListResponse> HttpResponse { get; set; } = new PandaDocHttpResponse<DocumentListResponse>();
 
-        public TemplateListResponse? Response
+        public DocumentListResponse? Response
         {
             get
             {
@@ -32,7 +32,7 @@ namespace PandaDocDotNetSDK.API
             }
         }
 
-        public void GetTemplateList()
+        public void GetDocumentList()
         {
 
             // Validate Input based on Api Requirements
@@ -42,7 +42,7 @@ namespace PandaDocDotNetSDK.API
             }
 
             // Execute Api Call
-            using (Task<PandaDocHttpResponse<TemplateListResponse>>? task = ExecuteApi())
+            using (Task<PandaDocHttpResponse<DocumentListResponse>>? task = ExecuteApi())
             {
                 if ((task != null) && (task.Result != null))
                 {
@@ -50,13 +50,13 @@ namespace PandaDocDotNetSDK.API
                 }
             }
 
-        } // GetTemplateList
+        } // GetDocumentList
 
-        private async Task<PandaDocHttpResponse<TemplateListResponse>>? ExecuteApi()
+        private async Task<PandaDocHttpResponse<DocumentListResponse>>? ExecuteApi()
         {
 
             // Setup "Base" Url
-            Url endpointUrl = new Url(Client.Settings.StrApiTemplates);
+            Url endpointUrl = new Url(Client.Settings.StrApiDocuments);
 
             // Add any input query parameters (if any)
             if ((UrlQueryParms != null) && (UrlQueryParms.ParameterCount > 0))
@@ -67,15 +67,15 @@ namespace PandaDocDotNetSDK.API
             // GET
             using (HttpResponseMessage httpResponse = await Client.HttpClient.GetAsync(endpointUrl).ConfigureAwait(false))
             {
-                return await httpResponse.ToPandaDocResponseAsync<TemplateListResponse>(Client.JsonFormatters)!;
+                return await httpResponse.ToPandaDocResponseAsync<DocumentListResponse>(Client.JsonFormatters)!;
             }
 
-        } // CallGetTemplateList
+        } // CallGetDocumentList
 
-        public TemplateListApi(PandaDocHttpClient client) : base(client)
+        public DocumentListApi(PandaDocHttpClient client) : base(client)
         {
         }
 
-    } // TemplateListApi
+    } // DocumentListApi
 
 } // namespace

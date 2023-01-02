@@ -3,7 +3,7 @@
 PandaDocDotNetCoreSDK
 ========================
 *Private* Library --- not affiliated with PandaDoc
-Website: https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki
+Website: https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki/
 License: https://licenses.nuget.org/MIT
 References:
 	API Documentation: https://developers.pandadoc.com/reference/about
@@ -40,7 +40,7 @@ Website: https://dotnet.microsoft.com/en-us/apps/aspnet/apis
 License: https://www.nuget.org/packages/Microsoft.AspNet.WebApi/5.2.9/license
 
 Microsoft.AspNetCore.StaticFiles
-==============================
+================================
 Website: https://dotnet.microsoft.com/en-us/apps/aspnet
 License: https://licenses.nuget.org/MIT
 

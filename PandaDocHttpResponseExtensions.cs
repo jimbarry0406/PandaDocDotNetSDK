@@ -17,7 +17,7 @@ namespace PandaDocDotNetSDK
             string responseContent = String.Empty;
             if (httpResponse.Content != null)
             {
-                responseContent = await httpResponse.Content.ReadAsStringAsync();
+                responseContent = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
             }
 
             PandaDocHttpResponse response = new PandaDocHttpResponse
@@ -46,7 +46,7 @@ namespace PandaDocDotNetSDK
             string responseContent = String.Empty;
             if (httpResponse.Content != null)
             {
-                responseContent = await httpResponse.Content.ReadAsStringAsync();
+                responseContent = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
             }
 
             var response = new PandaDocHttpResponse<T>
@@ -62,11 +62,11 @@ namespace PandaDocDotNetSDK
             {
                 if (formatters == null)
                 {
-                    response.Value = await httpResponse.Content.ReadAsAsync<T>();
+                    response.Value = await httpResponse.Content.ReadAsAsync<T>().ConfigureAwait(false);
                 }
                 else
                 {
-                    response.Value = await httpResponse.Content.ReadAsAsync<T>(formatters);
+                    response.Value = await httpResponse.Content.ReadAsAsync<T>(formatters).ConfigureAwait(false);
                 }
             }
             else

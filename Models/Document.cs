@@ -4,40 +4,46 @@ using System;
 namespace PandaDocDotNetSDK.Models
 {
 
-    public class Template
+    public class Document
     {
 
         //
         // Constructors
         //
 
-        public Template() : base()
+        public Document() : base()
         {
         }
 
         [JsonConstructor]
-        public Template(
+        public Document(
             [JsonProperty("id")] string id,
             [JsonProperty("name")] string name,
+            [JsonProperty("status")] string status,
             [JsonProperty("date_created")] DateTime? dateCreated,
             [JsonProperty("date_modified")] DateTime? dateModified,
+            [JsonProperty("expiration_date")] DateTime? expirationDate,
             [JsonProperty("version")] string version
         ) : base()
         {
             Id = id;
             Name = name;
+            Status = status;
             DateCreated = dateCreated;
             DateModified = dateModified;
+            ExpirationDate = expirationDate;
             Version = version;
         }
 
-        public Template(Template template) : base()
+        public Document(Document document) : base()
         {
-            Id = template.Id;
-            Name = template.Name;
-            DateCreated = template.DateCreated;
-            DateModified = template.DateModified;
-            Version = template.Version;
+            Id = document.Id;
+            Name = document.Name;
+            Status = document.Status;
+            DateCreated = document.DateCreated;
+            DateModified = document.DateModified;
+            ExpirationDate = document.ExpirationDate;
+            Version = document.Version;
         }
 
         //
@@ -50,15 +56,21 @@ namespace PandaDocDotNetSDK.Models
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("status")]
+        public string? Status { get; set; }
+
         [JsonProperty("date_created")]
         public DateTime? DateCreated { get; set; }
 
         [JsonProperty("date_modified")]
         public DateTime? DateModified { get; set; }
 
+        [JsonProperty("expiration_date")]
+        public DateTime? ExpirationDate { get; set; }
+
         [JsonProperty("version")]
         public string? Version { get; set; }
 
-    } // class Template
+    } // class Document
 
 } // namespace
