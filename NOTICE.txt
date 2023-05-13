@@ -2,6 +2,8 @@
 
 PandaDocDotNetCoreSDK
 ========================
+.NET PandaDoc Library
+
 *Private* Library --- not affiliated with PandaDoc
 Website: https://github.com/jimbarry0406/PandaDocDotNetSDK/wiki/
 License: https://licenses.nuget.org/MIT
